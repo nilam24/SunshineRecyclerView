@@ -32,12 +32,12 @@ public class NetworkUtils {
     /* The number of days we want our API to return */
     private static final int numDays = 14;
 
-    final static String QUERY_PARAM = "q";
+    private final static String QUERY_PARAM = "q";
     final static String LAT_PARAM = "lat";
     final static String LON_PARAM = "lon";
-    final static String FORMAT_PARAM = "mode";
-    final static String UNITS_PARAM = "units";
-    final static String DAYS_PARAM = "cnt";
+    private final static String FORMAT_PARAM = "mode";
+    private final static String UNITS_PARAM = "units";
+    private final static String DAYS_PARAM = "cnt";
 
     public static URL buildUrl(String locationQuery) {
         Uri builtUri = Uri.parse(FORECAST_BASE_URL).buildUpon()

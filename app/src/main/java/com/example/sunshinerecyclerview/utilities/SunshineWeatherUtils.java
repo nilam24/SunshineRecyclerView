@@ -11,7 +11,7 @@ import com.example.sunshinerecyclerview.data.Sunshinepreferences;
  * Created by Dell1 on 28/04/2017.
  */
 
-public class SunshineWeatherUtils {
+class SunshineWeatherUtils {
 
 
     private static final String LOG_TAG = SunshineWeatherUtils.class.getSimpleName();
@@ -21,7 +21,7 @@ public class SunshineWeatherUtils {
         return temperatureInFahrenheit;
     }
 
-    public static String formatTemperature(Context context, double temperature) {
+    private static String formatTemperature(Context context, double temperature) {
         int temperatureFormatResourceId = R.string.format_temperature_celsius;
 
 
@@ -35,7 +35,7 @@ public class SunshineWeatherUtils {
         return String.format(context.getString(temperatureFormatResourceId), temperature);
     }
 
-    public static String formatHighLows(Context context, double high, double low) {
+    static String formatHighLows(Context context, double high, double low) {
         long roundedHigh = Math.round(high);
         long roundedLow = Math.round(low);
 

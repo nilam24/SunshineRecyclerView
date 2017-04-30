@@ -12,39 +12,39 @@ import java.util.TimeZone;
  * Created by Dell1 on 28/04/2017.
  */
 
-public class SunshineDateUtils {
+class SunshineDateUtils {
 
 
-    public static final long SECOND_IN_MILLIS = 1000;
-    public static final long MINUTE_IN_MILLIS = SECOND_IN_MILLIS * 60;
-    public static final long HOUR_IN_MILLIS = MINUTE_IN_MILLIS * 60;
-    public static final long DAY_IN_MILLIS = HOUR_IN_MILLIS * 24;
+    private static final long SECOND_IN_MILLIS = 1000;
+    private static final long MINUTE_IN_MILLIS = SECOND_IN_MILLIS * 60;
+    private static final long HOUR_IN_MILLIS = MINUTE_IN_MILLIS * 60;
+    static final long DAY_IN_MILLIS = HOUR_IN_MILLIS * 24;
 
-    public static long getDayNumber(long date) {
+    private static long getDayNumber(long date) {
         TimeZone tz = TimeZone.getDefault();
         long gmtOffset = tz.getOffset(date);
         return (date + gmtOffset) / DAY_IN_MILLIS;
     }
 
-    public static long normalizeDate(long date) {
+    static long normalizeDate(long date) {
         // Normalize the start date to the beginning of the (UTC) day in local time
         long retValNew = date / DAY_IN_MILLIS * DAY_IN_MILLIS;
         return retValNew;
     }
 
-    public static long getLocalDateFromUTC(long utcDate) {
+    private static long getLocalDateFromUTC(long utcDate) {
         TimeZone tz = TimeZone.getDefault();
         long gmtOffset = tz.getOffset(utcDate);
         return utcDate - gmtOffset;
     }
 
-    public static long getUTCDateFromLocal(long localDate) {
+    static long getUTCDateFromLocal(long localDate) {
         TimeZone tz = TimeZone.getDefault();
         long gmtOffset = tz.getOffset(localDate);
         return localDate + gmtOffset;
     }
 
-    public static String getFriendlyDateString(Context context, long dateInMillis, boolean showFullDate) {
+    static String getFriendlyDateString(Context context, long dateInMillis, boolean showFullDate) {
 
         long localDate = getLocalDateFromUTC(dateInMillis);
         long dayNumber = getDayNumber(localDate);
@@ -59,7 +59,7 @@ public class SunshineDateUtils {
             String readableDate = getReadableDateString(context, localDate);
             if (dayNumber - currentDayNumber < 2) {
 
-                String localizedDayName = new SimpleDateFormat("EEEE").format(localDate);
+                String localizedDayName = new SimpleDateFormat("dd/mm/yyyy").format(localDate);
                 return readableDate.replace(localizedDayName, dayName);
             } else {
                 return readableDate;
@@ -101,7 +101,7 @@ public class SunshineDateUtils {
              * Otherwise, if the day is not today, the format is just the day of the week
              * (e.g "Wednesday")
              */
-            SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE");
+            SimpleDateFormat dayFormat = new SimpleDateFormat("dd/mm/yyyy");
             return dayFormat.format(dateInMillis);
         }
     }

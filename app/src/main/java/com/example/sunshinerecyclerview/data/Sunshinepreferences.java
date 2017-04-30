@@ -3,7 +3,7 @@ package com.example.sunshinerecyclerview.data;
 import android.content.Context;
 
 /**
- * Created by Dell1 on 28/04/2017.
+ * Created by  ${nilam} Dell1 on 28/04/2017.
  */
 
 public class Sunshinepreferences {
@@ -50,7 +50,7 @@ public class Sunshinepreferences {
         /** This will be implemented in a future lesson **/
         return DEFAULT_WEATHER_LOCATION;
     }
-    public static double[] getDefaultWeatherCoordinates() {
+    private static double[] getDefaultWeatherCoordinates() {
         /** This will be implemented in a future lesson **/
         return DEFAULT_WEATHER_COORDINATES;
     }
