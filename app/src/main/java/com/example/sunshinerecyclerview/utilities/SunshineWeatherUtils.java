@@ -18,6 +18,7 @@ class SunshineWeatherUtils {
 
     private static double celsiusToFahrenheit(double temperatureInCelsius) {
         double temperatureInFahrenheit = (temperatureInCelsius * 1.8) + 32;
+
         return temperatureInFahrenheit;
     }
 

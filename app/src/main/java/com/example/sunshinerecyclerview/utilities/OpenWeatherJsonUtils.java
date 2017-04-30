@@ -35,6 +35,7 @@ public class OpenWeatherJsonUtils {
 
         /* String array to hold each day's weather String */
         String[] parsedWeatherData = null;
+
         JSONObject forecastJson = new JSONObject(forecastJsonStr);
 
         /* Is there an error? */
