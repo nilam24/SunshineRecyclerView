@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity  implements ForecastAdapter.
 
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
 
         int number=1,i=0,j=0;
@@ -127,8 +128,8 @@ public class MainActivity extends AppCompatActivity  implements ForecastAdapter.
     class FetchWeatherTask extends AsyncTask<String, Void,String[]>
     {
 
-        public FetchWeatherTask(){
-
+        FetchWeatherTask(){
+            
             super();
 
         }
