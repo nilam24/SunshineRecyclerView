@@ -128,6 +128,7 @@ public class MainActivity extends AppCompatActivity  implements ForecastAdapter.
     {
 
         public FetchWeatherTask(){
+
             super();
 
         }
